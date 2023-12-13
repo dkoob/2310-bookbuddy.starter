@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom"
+import SearchBar from "./SearchBar"
 
 const Books = ({ books }) => {
 
     return(
         <div>
 
-            <h1>Books</h1>
-            <h3>We should see our books here!</h3>
+            <h1>Our catalog</h1>
+            <SearchBar books = {books}/>
             <br />
             <div className="bookNavBar">
                 <span className="bookNavContentImage">Book Image</span>

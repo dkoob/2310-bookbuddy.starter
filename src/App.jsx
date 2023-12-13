@@ -9,6 +9,7 @@ import Register from './components/Register'
 import Account from './components/Account'
 import SuccessRegi from './components/SuccessRegi'
 import Homepage from './components/Homepage'
+import SingleBook from './components/SingleBook'
 
 function App() {
   const [token, setToken] = useState(null)
@@ -50,18 +51,16 @@ function App() {
   return (
     <>
     <h1><img id='logo-image' src={bookLogo}/><Link to='/'>Library App</Link></h1>
-    {console.log(books)}
     <Navigations user={user}/>
     <Routes>
-      <Route path='/' element={<Homepage/>}/>
+      <Route path='/' element={<Homepage user = {user}/>}/>
       <Route path='/successReg' element={<SuccessRegi />}/>
       <Route path='/books' element={<Books books = {books}/>}/>
+      <Route path='/books/:bookId' element={<SingleBook books = {books}/>}></Route>
       <Route path='/login' element={<Login setUser={setUser} setToken={setToken}/>}/>
       <Route path='/register' element={<Register />}/>
       <Route path='/account' element={<Account user={user} setUser={setUser} setToken={setToken}/>}/>
     </Routes>
-
-      
     </>
   )
 }

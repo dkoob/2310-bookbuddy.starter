@@ -113,3 +113,12 @@ nav a{
   width: 390.5px;
   display: inline-block;
 }
+
+.searchBar {
+  display: flex;
+  align-items: center;
+}
+
+.searchBar h5 {
+  margin-right: 10px;
+}
