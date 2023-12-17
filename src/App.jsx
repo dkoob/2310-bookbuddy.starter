@@ -10,6 +10,7 @@ import Account from './components/Account'
 import SuccessRegi from './components/SuccessRegi'
 import Homepage from './components/Homepage'
 import SingleBook from './components/SingleBook'
+import About from './components/About'
 
 function App() {
   const [token, setToken] = useState(null)
@@ -59,6 +60,7 @@ function App() {
       <Route path='/login' element={<Login setUser={setUser} setToken={setToken}/>}/>
       <Route path='/register' element={<Register />}/>
       <Route path='/account' element={<Account user={user} setUser={setUser} setToken={setToken}/>}/>
+      <Route path='/about' element={<About />}></Route>
     </Routes>
     </>
   )
