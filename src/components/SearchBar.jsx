@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const SearchBar = ({books}) => {
     const [searchTerm, setSearchTerm] = useState('')
@@ -13,11 +14,7 @@ const SearchBar = ({books}) => {
         <div>
             <label>
                 <span className='searchBar'>
-                <input
-                    className='searchInput' 
-                    type="text"
-                    value={searchTerm}
-                    onChange={(event) => {setSearchTerm(event.target.value)}}
+                <input className='searchInput' type="text" value={searchTerm} onChange={(event) => {setSearchTerm(event.target.value)}}
                 />
                 <h5>Search our catalog</h5>
                 </span>
@@ -29,7 +26,15 @@ const SearchBar = ({books}) => {
                         <ul>
                             {
                                 filteredTerms.map((book) => {
-                                    return <li key={book.id}>{book.title}</li>
+                                    return (
+                                        <div key={book.id}>
+                                            <li>
+                                            <Link to={`/books/${book.id}`}>{book.title}</Link>
+                                            </li>
+                                        </div>
+
+                                    )
+
                                 })
                             }
                         </ul>

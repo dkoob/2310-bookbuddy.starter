@@ -122,3 +122,20 @@ nav a{
 .searchBar h5 {
   margin-right: 10px;
 }
+
+.singleBookPage {
+  text-align: center;
+}
+
+.singleBookImg {
+  width: 25%;
+  height: 25%;
+}
+
+.checkedOutList {
+  display: flex;
+}
+
+.checkedOutList button {
+  margin-left: 15px;
+}

@@ -19,16 +19,15 @@ function App() {
   useEffect(() => {
     const attemptLogin = async() => {
       const loggedInToken = window.localStorage.getItem('token')
-      
 
       if(loggedInToken){
+        setToken(loggedInToken)
         const response = await axios.get('https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/me', {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${loggedInToken}`
           }
         })
-
         setUser(response.data)
       }else{
         
@@ -55,8 +54,8 @@ function App() {
     <Routes>
       <Route path='/' element={<Homepage user = {user}/>}/>
       <Route path='/successReg' element={<SuccessRegi />}/>
-      <Route path='/books' element={<Books books = {books}/>}/>
-      <Route path='/books/:bookId' element={<SingleBook books = {books}/>}></Route>
+      <Route path='/books' element={<Books books = {books} token = {token}/>}/>
+      <Route path='/books/:bookId' element={<SingleBook books = {books} user = {user} token = {token}/>}></Route>
       <Route path='/login' element={<Login setUser={setUser} setToken={setToken}/>}/>
       <Route path='/register' element={<Register />}/>
       <Route path='/account' element={<Account user={user} setUser={setUser} setToken={setToken}/>}/>

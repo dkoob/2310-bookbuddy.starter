@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom"
 import SearchBar from "./SearchBar"
 
-const Books = ({ books }) => {
+const Books = ({ books, token }) => {
 
     return(
         <div>
-
             <h1>Our catalog</h1>
             <SearchBar books = {books}/>
             <br />
@@ -30,5 +29,6 @@ const Books = ({ books }) => {
         </div>
     )
 }
+
 
 export default Books
